@@ -4,8 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import static org.junit.Assert.assertTrue;
+import org.springframework.test.util.AssertionErrors;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -17,6 +16,6 @@ public class Spring5RecipeAppApplicationTests {
 
 	@Test
 	public void test2(){
-		assertTrue(true);
+		AssertionErrors.assertTrue( "", true );
 	}
 }
