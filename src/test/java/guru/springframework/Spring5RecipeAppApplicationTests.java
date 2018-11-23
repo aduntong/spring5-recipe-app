@@ -15,7 +15,8 @@ public class Spring5RecipeAppApplicationTests {
 	public void contextLoads() {
 	}
 
-	@Test void test2(){
+	@Test
+	public void test2(){
 		assertTrue(true);
 	}
 }
