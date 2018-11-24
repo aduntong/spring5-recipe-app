@@ -121,9 +121,10 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M1</version>
 				<configuration>
-					<argLine>
-						--illegal-access=permit
-					</argLine>
+					<reuseForks>true</reuseForks>
+					<forkCount>0</forkCount>
+					<!--<forkMode>once</forkMode>-->
+					<argLine>--illegal-access=permit -Dfile.encoding=UTF-8 -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=256m</argLine>
 				</configuration>
 			</plugin>
 			<plugin>
