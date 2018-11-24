@@ -72,7 +72,7 @@
 				<version>2.22.1</version>
 				<configuration>
 					<forkMode>once</forkMode>
-					<!--<argLine>-Dfile.encoding=UTF-8 -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=256m</argLine>-->
+					<argLine>-Dfile.encoding=UTF-8 -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=256m</argLine>
 				</configuration>
 			</plugin>
 		</plugins>
