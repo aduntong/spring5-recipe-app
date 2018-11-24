@@ -22,7 +22,7 @@ jobs:
 
     steps:
     - checkout
-    - run: mvn clean
+#    - run: mvn clean
     # Download and cache dependencies
     - restore_cache:
         keys:
