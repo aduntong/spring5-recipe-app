@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by jt on 6/19/17.
  */
@@ -28,10 +30,10 @@ public class RecipeController {
 
         return "recipe/show";
     }
-
-    @GetMapping
-    @RequestMapping("recipe/new")
-    public String newRecipe(Model model){
+    @GetMapping("recipe/new")
+//    @RequestMapping("")
+    public String newRecipe( Model model, HttpServletRequest request ){
+        log.info( " method: {}", request.getMethod() );
         model.addAttribute("recipe", new RecipeCommand());
 
         return "recipe/recipeform";
