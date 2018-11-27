@@ -50,7 +50,7 @@ public class RecipeController {
 
     /**
      * !!! 注意这里
-     * @param command
+     * @param  command
      * @param bindingResult
      * @param model
      * @return
