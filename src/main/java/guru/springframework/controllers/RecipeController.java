@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -47,17 +48,22 @@ public class RecipeController {
         return RECIPE_RECIPEFORM_URL;
     }
 
+    /**
+     * !!! 注意这里
+     * @param command
+     * @param bindingResult
+     * @param model
+     * @return
+     */
     @PostMapping("recipe")
-    public String saveOrUpdate(@Valid @ModelAttribute("recipe") RecipeCommand command){
-// , BindingResult bindingResult
-//        if(bindingResult.hasErrors()){
-//
-//            bindingResult.getAllErrors().forEach(objectError -> {
-//                log.debug(objectError.toString());
-//            });
-//
-//            return RECIPE_RECIPEFORM_URL;
-//        }
+    public String saveOrUpdate(@Valid @ModelAttribute("recipe") RecipeCommand command, BindingResult bindingResult, Model model){
+
+        if(bindingResult.hasErrors()){
+            bindingResult.getAllErrors().forEach(objectError -> {
+                log.debug(objectError.toString());
+            });
+            return RECIPE_RECIPEFORM_URL;
+        }
 
         RecipeCommand savedCommand = recipeService.saveRecipeCommand(command);
 

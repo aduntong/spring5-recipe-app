@@ -100,6 +100,10 @@ public class RecipeControllerTest {
                 .andExpect(view().name("redirect:/recipe/2/show"));
     }
 
+	/**
+	 * 参数校验未通过时，则会返回原表格，同时返回
+	 * @throws Exception
+	 */
     @Test
     public void testPostNewRecipeFormValidationFail() throws Exception {
         RecipeCommand command = new RecipeCommand();
@@ -113,8 +117,11 @@ public class RecipeControllerTest {
 
         )
                 .andExpect(status().isOk())
+		        // 这个是哪里来的？
+		        // !!! 注意这里
                 .andExpect(model().attributeExists("recipe"))
                 .andExpect(view().name("recipe/recipeform"));
+
     }
 
     @Test
